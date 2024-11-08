@@ -76,6 +76,15 @@ function changeLanguage(lang) {
             element.textContent = buttonTexts[id][lang];
         }
     });
+
+    // Add this to update the modal text
+    const modalTitle = document.querySelector('#privateProjectModal h2');
+    const modalText = document.querySelector('#privateProjectModal p');
+    
+    if (modalTitle && modalText) {
+        modalTitle.textContent = modalTitle.getAttribute(`data-${lang}`);
+        modalText.textContent = modalText.getAttribute(`data-${lang}`);
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -125,4 +134,45 @@ document.addEventListener('DOMContentLoaded', () => {
     // Set initial language based on localStorage or default to English
     const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
     changeLanguage(savedLanguage);
+
+    // Add this JavaScript code
+    const modal = document.getElementById('privateProjectModal');
+    const closeButton = modal.querySelector('.close-button');
+
+    // Function to show modal
+    function showPrivateProjectModal() {
+        modal.style.display = 'flex';
+        // Use setTimeout to ensure the transition works
+        setTimeout(() => {
+            modal.classList.add('show');
+        }, 10);
+    }
+
+    // Function to hide modal
+    function hidePrivateProjectModal() {
+        modal.classList.remove('show');
+        setTimeout(() => {
+            modal.style.display = 'none';
+        }, 300); // Match this with your CSS transition time
+    }
+
+    // Add click event to close button
+    closeButton.addEventListener('click', hidePrivateProjectModal);
+
+    // Close modal when clicking outside
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            hidePrivateProjectModal();
+        }
+    });
+
+    // Update the portfolio item click handlers
+    document.querySelectorAll('.project-card').forEach(item => {
+        item.addEventListener('click', function(e) {
+            if (this.dataset.private === 'true') {
+                e.preventDefault();
+                showPrivateProjectModal();
+            }
+        });
+    });
 });
