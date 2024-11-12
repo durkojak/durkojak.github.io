@@ -56,13 +56,20 @@ function changeLanguage(lang) {
         }
     };
 
-    // Update elements with specific content
-    Object.keys(elements).forEach(id => {
-        const element = document.getElementById(id);
-        if (element) {
-            element.textContent = elements[id][lang];
-        }
-    });
+    for (const [id, content] of Object.entries(elements)) {
+        document.getElementById(id).textContent = content[lang];
+    }
+
+    // Update CV links based on the selected language
+    const viewCvLink = document.getElementById('view-cv');
+    const downloadCvLink = document.getElementById('download-cv');
+    if (lang === 'sk') {
+        viewCvLink.setAttribute('href', 'images/slovak_cv.pdf');
+        downloadCvLink.setAttribute('href', 'images/slovak_cv.pdf');
+    } else {
+        viewCvLink.setAttribute('href', 'images/english_cv.pdf');
+        downloadCvLink.setAttribute('href', 'images/english_cv.pdf');
+    }
 
     // Update button texts
     const buttonTexts = {

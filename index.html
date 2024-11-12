@@ -140,6 +140,12 @@
                 color: #fff;
             }
         }
+
+        .profile-img {
+            width: 150px; /* Adjust the width as needed */
+            height: 150px; /* Adjust the height as needed */
+            object-fit: cover; /* Ensures the image maintains its aspect ratio */
+        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-900">
@@ -184,8 +190,7 @@
         <section id="about-me" class="my-16">
             <h2 class="text-3xl font-semibold mb-4 text-center" data-en="About Me" data-sk="O mne">About Me</h2>
             <div class="flex flex-col md:flex-row items-center">
-                <img src="images/ja.jpeg" alt="Jakub Durkovic" class="w-40 h-40 rounded-full mb-4 md:mb-0 md:mr-8 shadow-lg">
-                <p id="about-text" class="text-lg leading-relaxed">My name is Jakub Ďurkovič and I'm a 3rd-year student at Faculty of Information Technology, Czech Technical University in Prague, currently on an exchange at NTU Singapore. My portfolio consists of projects written in Java, C++, PHP and some database projects. These projects are a part of my studies and personal interests. I'm always looking for new opportunities to learn and grow in the field of software engineering.
+                <img src="images/ja.jpg" alt="Jakub Durkovic" class="profile-img rounded-full mb-4 md:mb-0 md:mr-8 shadow-lg">                <p id="about-text" class="text-lg leading-relaxed">My name is Jakub Ďurkovič and I'm a 3rd-year student at Faculty of Information Technology, Czech Technical University in Prague, currently on an exchange at NTU Singapore. My portfolio consists of projects written in Java, C++, PHP and some database projects. These projects are a part of my studies and personal interests. I'm always looking for new opportunities to learn and grow in the field of software engineering.
                     In 2026 I will graduate from CTU and I'm looking for a job in the field of software engineering as well as help with my bachelor thesis.
                 </p>
             </div>
@@ -239,17 +244,10 @@
             <div class="text-center">
                 <p id="cv-text" class="text-lg text-gray-600 mb-8">If you're interested in learning more about my professional background and qualifications, you can view or download my CV.</p>
                 <div class="flex justify-center gap-4">
-                    <a id="view-cv" href="images/CV of Jakub Durkovic.pdf" target="_blank" class="inline-flex items-center bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-500 transition-colors duration-300">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                        </svg>
+                    <a id="view-cv" href="images/english_cv.pdf" class="inline-flex items-center bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-500 transition-colors duration-300">
                         View CV
                     </a>
-                    <a id="download-cv" href="images/CV of Jakub Durkovic.pdf" download="CV_Jakub_Durkovic.pdf" class="inline-flex items-center bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-500 transition-colors duration-300">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                        </svg>
+                    <a id="download-cv" href="images/english_cv.pdf" download="CV_Jakub_Durkovic.pdf" class="inline-flex items-center bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-500 transition-colors duration-300">
                         Download CV
                     </a>
                 </div>
